@@ -1,0 +1,178 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Contact Us</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link href="style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript">
+// <![CDATA[
+jQuery(document).ready(function(){
+	$('#contactform').submit(function(){				  
+		var action = $(this).attr('action');
+		$.post(action, { 
+			name: $('#name').val(),
+			email: $('#email').val(),
+			company: $('#company').val(),
+			subject: $('#subject').val(),
+			message: $('#message').val()
+		},
+			function(data){
+				$('#contactform #submit').attr('disabled','');
+				$('.response').remove();
+				$('#contactform').before('<p class="response">'+data+'</p>');
+				$('.response').slideDown();
+				if(data=='Message sent!') $('#contactform').slideUp();
+			}
+		); 
+		return false;
+	});
+});
+// ]]>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/easySlider1.5.js"></script>
+<script type="text/javascript" charset="utf-8">
+// <![CDATA[
+$(document).ready(function(){	
+	$("#slider").easySlider({
+		controlsBefore:	'<p id="controls">',
+		controlsAfter:	'</p>',
+		auto: true, 
+		continuous: true
+	});	
+});
+// ]]>
+</script>
+<style type="text/css">
+.gallery { float:right; width:412px; height:258px; margin:0; padding:35px 25px 0 0; }
+#slider { margin:0; padding:0; list-style:none; }
+#slider ul,
+#slider li { margin:0; padding:0; list-style:none; }
+/* 
+    define width and height of list item (slide)
+    entire slider area will adjust according to the parameters provided here
+*/
+#slider li { width:412px; height:258px; overflow:hidden; }
+p#controls { margin:0; padding:0; position:relative; }
+#prevBtn { display:block; margin:0; overflow:hidden; width:27px; height:60px; position:absolute; left:-41px; top:-140px; }
+#nextBtn { display:block; margin:0; overflow:hidden; width:27px; height:60px; position:absolute; left: 425px; top:-140px; }
+#prevBtn a { display:block; width:27px; height:60px; background:url(images/l_arrow.gif) no-repeat 0 0; }
+#nextBtn a { display:block; width:27px; height:60px; background:url(images/r_arrow.gif) no-repeat 0 0; }
+</style>
+</script>
+</head>
+<body>
+<div class="main">
+  <div class="blok_header">
+    <div class="header">
+      <div class="logo"><a href="index.html"><img src="images/logo.png" width="530" height="94" border="0" alt="logo" /></a></div>
+      <div class="menu">
+        <ul>
+          <li><a href="index.html"><span>Home</span></a></li>
+          <li><a href="services.html"><span>Services</span></a></li>
+          <li><a href="portfolio.html"><span>Products</span></a></li>
+          <li><a href="#"  class="active"><span>Contact us</span></a></li>
+        </ul>
+      </div>
+      <div class="clr"></div>
+    </div>
+    <div class="clr"></div>
+  </div>
+  <div class="clr"></div>
+ <div class="header_text_bg">
+    <div class="header_text">
+      <div class="div">
+        <div class="left1">
+          <h2><strong>Contact Us</strong></h2>
+          <ul>
+           
+          </ul>
+          <div class="clr"></div>
+          <p></p>
+        </div>
+        <div class="gallery">
+          <div id="slider">
+            <ul>
+              <li><img src="images/trend.jpg" alt="screen 1" width="412" height="258" border="0"  /></li>
+              <li><img src="images/max.jpg" alt="screen 1" width="412" height="258" border="0"  /></li>
+              <li><img src="images/esetl.jpg" alt="screen 1" width="412" height="258" border="0"  /></li>
+            </ul>
+          </div>
+        </div>
+        <div class="clr"></div>
+      </div>
+      </div>
+    </div>
+    <div class="clr"></div>
+  </div>
+        <div class="clr"></div>
+      </div>
+      <div class="clr"></div>
+    </div>
+    <div class="clr"></div>
+  </div>
+  <div class="body_resize">
+    <div class="body">
+      <div class="body_big">
+        <h2>Featured Services</h2>
+        <p>For any kind of queries you can mail us on given email address or just fill up the form and send to us. we will surely get back to you within 24hrs. </p>
+        <div class="line"></div>
+        <form action="contact.php" method="post" id="contactform">
+          <ol>
+            <li>
+              <label for="name">First Name <span class="red">*</span></label>
+              <input id="name" name="name" class="text" />
+            </li>
+            <li>
+              <label for="email">Your email <span class="red">*</span></label>
+              <input id="email" name="email" class="text" />
+            </li>
+            <li>
+              <label for="company">Company</label>
+              <input id="company" name="company" class="text" />
+            </li>
+            <li>
+              <label for="subject">Subject</label>
+              <input id="subject" name="subject" class="text" />
+            </li>
+            <li>
+              <label for="message">Message <span class="red">*</span></label>
+              <textarea id="message" name="message" rows="6" cols="50"></textarea>
+            </li>
+            <li class="buttons">
+              <input type="image" name="imageField" id="imageField" src="images/send.gif" />
+            </li>
+          </ol>
+        </form>
+      </div>
+      <div class="body_small">
+        <h2>Get in touch!</h2>
+        <address>Prism Automation Systems.<br />
+        Unit 619/620, Plot No. 14/B, Grohitam,<br />
+        Sector - 19, Vashi,<br />
+        Navi Mumbai - 400 705<br />
+        India</address><br />
+          Mr. Manish Bodana: <a href="#">manish@prismautomation.co.in</a></p>
+          Mr. Lehari Bodana : <a href="#">lehari@prismautomation.co.in</a></p>
+          <h2>Testimonials</h2>
+        <p>&nbsp;</p>
+      </div>
+      <div class="clr"></div>
+    </div>
+    <div class="clr"></div>
+  </div>
+</div>
+<div class="footer">
+  <div class="footer_resize">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="products.html">Products</a></li>
+      <li><a href="#">Contact Us</a></li>
+          </ul>
+    <p>Copyright © <a href="http://www.prismautomation.co.in/">Prism Automation Systems.</a>. All Rights Reserved</p>
+    <div class="clr"></div>
+  </div>
+</div>
+</body>
+</html>
